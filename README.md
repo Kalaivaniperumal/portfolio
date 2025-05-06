@@ -1,8 +1,28 @@
-# Getting Started with Create React App
+# Portfolio Website
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts are
+## Deploying to Netlify
+
+### Option 1: Deploy via Netlify UI
+
+1. Go to [Netlify](https://app.netlify.com/) and log in or sign up
+2. Click on "Add new site" > "Import an existing project"
+3. Connect to your Git provider (GitHub, GitLab, etc.)
+4. Select your portfolio repository
+5. Configure the build settings:
+   - Build command: `npm run build`
+   - Publish directory: `build`
+6. Click "Deploy site"
+
+### Option 2: Deploy using Netlify Drop
+
+1. Run `npm run build` to create a production build
+2. Go to [Netlify Drop](https://app.netlify.com/drop)
+3. Drag and drop the entire `build` folder onto the Netlify Drop area
+4. Your site will be deployed instantly
+
+## Available Scripts
 
 In the project directory, you can run:
 
