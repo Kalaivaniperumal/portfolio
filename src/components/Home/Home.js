@@ -17,9 +17,7 @@ const Home = () => {
             <a href="#contact" className="btn primary-btn">
               Contact Me
             </a>
-            <a href="#" className="btn secondary-btn">
-              Download CV
-            </a>
+            <button className="btn secondary-btn">Download CV</button>
           </div>
         </div>
         <div className="image-container">
