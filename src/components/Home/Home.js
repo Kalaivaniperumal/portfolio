@@ -7,23 +7,18 @@ const Home = () => {
       <div className="home-content">
         <div className="text-content">
           <p className="greeting">Hello, I'm</p>
-          <h1 className="name">Your Name</h1>
-          <h2 className="title">Your Title / Position</h2>
+          <h1 className="name">KALAIVANI P</h1>
+          <h2 className="title">Front-End Developer</h2>
           <p className="description">
-            A brief description about yourself and what you do. Highlight your
-            key skills and what makes you unique in your field.
+            Software Developer with 2 years of hands-on experience in building responsive web applications using React.js.
+            Adept at developing reusable UI components, integrating APIs, and collaborating with cross-functional teams.
+            Strong expertise in chatbot development using Rasa Framework with applied NLP algorithms.
           </p>
           <div className="cta-buttons">
             <a href="#contact" className="btn primary-btn">
               Contact Me
             </a>
             <button className="btn secondary-btn">Download CV</button>
-          </div>
-        </div>
-        <div className="image-container">
-          {/* Replace with your profile image */}
-          <div className="profile-image-placeholder">
-            <span>Your Image</span>
           </div>
         </div>
       </div>

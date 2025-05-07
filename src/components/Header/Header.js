@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { ThemeContext } from '../../context/ThemeContext';
+import ThemeToggle from '../ThemeToggle/ThemeToggle';
 import './Header.css';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { isDarkMode } = useContext(ThemeContext);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,28 +27,32 @@ const Header = () => {
   };
 
   return (
-    <header className={`header ${scrolled ? 'scrolled' : ''}`}>
+    <header className={`header ${scrolled ? 'scrolled' : ''} ${isDarkMode ? 'dark' : 'light'}`}>
       <div className="header-container">
         <div className="logo">
-          <a href="#home">Your Name</a>
+          <a href="#home">KALAIVANI P</a>
         </div>
         
-        <div className={`mobile-menu-btn ${menuOpen ? 'active' : ''}`} onClick={toggleMenu}>
-          <span></span>
-          <span></span>
-          <span></span>
+        <div className="header-right">
+          <ThemeToggle />
+          
+          <div className={`mobile-menu-btn ${menuOpen ? 'active' : ''}`} onClick={toggleMenu}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          
+          <nav className={`nav-menu ${menuOpen ? 'active' : ''}`}>
+            <ul>
+              <li><a href="#home" onClick={() => setMenuOpen(false)}>Home</a></li>
+              <li><a href="#about" onClick={() => setMenuOpen(false)}>About</a></li>
+              <li><a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a></li>
+              <li><a href="#experience" onClick={() => setMenuOpen(false)}>Experience</a></li>
+              <li><a href="#education" onClick={() => setMenuOpen(false)}>Education</a></li>
+              <li><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></li>
+            </ul>
+          </nav>
         </div>
-        
-        <nav className={`nav-menu ${menuOpen ? 'active' : ''}`}>
-          <ul>
-            <li><a href="#home" onClick={() => setMenuOpen(false)}>Home</a></li>
-            <li><a href="#about" onClick={() => setMenuOpen(false)}>About</a></li>
-            <li><a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a></li>
-            <li><a href="#experience" onClick={() => setMenuOpen(false)}>Experience</a></li>
-            <li><a href="#education" onClick={() => setMenuOpen(false)}>Education</a></li>
-            <li><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></li>
-          </ul>
-        </nav>
       </div>
     </header>
   );

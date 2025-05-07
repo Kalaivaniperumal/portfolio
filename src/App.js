@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
 
 // Component imports
-import Header from './components/Header/Header';
-import Home from './components/Home/Home';
-// import About from './components/About/About';
-// import Skills from './components/Skills/Skills';
-// import Experience from './components/Experience/Experience';
-// import Education from './components/Education/Education';
-// import Contact from './components/Contact/Contact';
-// import Footer from './components/Footer/Footer';
+import Header from "./components/Header/Header";
+import Home from "./components/Home/Home";
+import About from './components/About/About';
+import Skills from './components/Skills/Skills';
+import Experience from './components/Experience/Experience';
+import Education from './components/Education/Education';
+import Contact from './components/Contact/Contact';
+import Footer from './components/Footer/Footer';
+import ParticlesBackground from "./components/ParticlesBackground/ParticlesBackground";
+import { ThemeProvider } from "./context/ThemeContext";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -32,18 +34,21 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Header />
-      <main>
-        <Home />
-        {/* <About /> */}
-        {/* <Skills /> */}
-        {/* <Experience /> */}
-        {/* <Education /> */}
-        {/* <Contact /> */}
-      </main>
-      {/* <Footer /> */}
-    </div>
+    <ThemeProvider>
+      <div className="App">
+        <ParticlesBackground />
+        <Header />
+        <main>
+          <Home />
+          <About />
+          <Skills />
+          <Experience />
+          <Education />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }
 
